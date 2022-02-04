@@ -52,7 +52,7 @@
             }
         }
     },
-    "clangd.path": "/usr/bin/clangd",
+    "clangd.path": "~/clangd_13.0.0/bin/clangd",
     "d.trace.server": "verbose",
     "d.rootPatterns": [
         "dub.json",
