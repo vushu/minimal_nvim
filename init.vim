@@ -100,6 +100,10 @@ Plug 'tpope/vim-unimpaired'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'Raimondi/delimitMate'
 
+"Buffer"
+Plug 'ap/vim-buftabline'
+
+
 ""Folder explorer
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
@@ -414,6 +418,23 @@ au Filetype * nnoremap <leader>v :vsplit ~/.config/nvim/init.vim<CR>
 set cursorline        ""# highlight current line
 set cursorcolumn ""# highlight current column
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowTogglea Set true color in the terminal
+
+"""buftabline
+nmap <leader><BS><BS> :bufdo bd<cr>
+nmap <leader>1 <Plug>BufTabLine.Go(1)
+nmap <leader>2 <Plug>BufTabLine.Go(2)
+nmap <leader>3 <Plug>BufTabLine.Go(3)
+nmap <leader>4 <Plug>BufTabLine.Go(4)
+nmap <leader>5 <Plug>BufTabLine.Go(5)
+nmap <leader>6 <Plug>BufTabLine.Go(6)
+nmap <leader>7 <Plug>BufTabLine.Go(7)
+nmap <leader>8 <Plug>BufTabLine.Go(8)
+nmap <leader>9 <Plug>BufTabLine.Go(9)
+nmap <leader>0 <Plug>BufTabLine.Go(0)
+
+let g:buftabline_show = 2       " Always show
+let g:buftabline_numbers = 2    " Ordinal from left-to-right
+
 let g:lightline = {}
 
 function! ToggleTheme()
