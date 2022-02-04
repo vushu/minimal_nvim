@@ -13,7 +13,7 @@ sudo apt-get install python3-pip -y
 pip3 install pynvim
 #Install clang-13
 echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-13 main" >> /etc/apt/sources.list
-echo "deb-src http://apt.llvm.org/focal/ llvm-toolchain-focal-13 main" >> /etc/sources.list
+echo "deb-src http://apt.llvm.org/focal/ llvm-toolchain-focal-13 main" >> /etc/apt/sources.list
 sudo apt update
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
 sudo apt install clang-13 clangd-13 clang-format-13 -y
@@ -35,6 +35,7 @@ ln -s /squashfs-root/AppRun /usr/bin/nvim
 mkdir -p ~/.config/nvim
 #copy init.vim to
 cp init.vim ~/.config/nvim/init.vim
+cp coc-settings.json ~/.config/nvim/
 
 
 #Adding cwd tools

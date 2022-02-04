@@ -1,0 +1,84 @@
+{
+
+    "languageserver": {
+        "haskell": {
+            "command": "hie-wrapper",
+            "rootPatterns": [".stack.yaml", "cabal.config", "package.yaml"],
+            "filetypes": ["hs", "lhs", "haskell"],
+            "initializationOptions": {},
+            "settings": {
+                "languageServerHaskell": {
+                    "hlintOn": false,
+                    "maxNumberOfProblems": 10,
+                    "completionSnippetsOn": true
+                }
+            }
+        },
+        "kotlin": {
+            "command": "/home/vushu/.lsp/KotlinLanguageServer/server/build/install/server/bin/server",
+            "filetypes": ["kotlin", "kt", "kts"]
+        },
+        "haxe": {
+            "command": "node",
+            "args": ["/home/vushu/coding/repos/haxe-language-server/bin/server.js"],
+            "filetypes": ["haxe"],
+            "trace.server": "verbose",
+            "initializationOptions": {
+                "displayArguments": ["build.hxml"]
+            },
+            "settings": {
+                "haxe.executable":"haxe"
+            }
+        },
+        "crystal" : {
+            "command": "/home/vushu/crystalline",
+            "filetypes": ["crystal"],
+            "rootPatterns": ["shard.yml"],
+        },
+
+        "zls" : {
+            "command": "/home/vushu/tools/ls/zls/zls",
+            "filetypes": ["zig"]
+        },
+
+        "dart": {
+            "command": "dart",
+            "args": ["/usr/lib/dart/bin/snapshots/analysis_server.dart.snapshot", "--lsp"],
+            "filetypes": ["dart"],
+            "rootPatterns": ["pubspec.yaml"],
+            "disableDynamicRegister": true,
+            "trace.server": "verbose"
+        },
+        "cmake": {
+            "command": "cmake-language-server",
+            "filetypes": ["cmake"],
+            "rootPatterns": [
+                "build/"
+            ],
+            "initializationOptions": {
+                "buildDirectory": "build"
+            }
+        },
+        "clojure-lsp": {
+            "command": "bash",
+            "args": ["-c", "clojure-lsp"],
+            "filetypes": ["clojure"],
+            "rootPatterns": ["project.clj", "deps.edn"],
+            "additionalSchemes": ["jar", "zipfile"],
+            "trace.server": "verbose",
+            "initializationOptions": {
+            }
+        }
+    },
+    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/13.0.0/clangd_13.0.0/bin/clangd",
+    "d.trace.server": "verbose",
+    "d.rootPatterns": [
+        "dub.json",
+        "dub.sdl"
+    ],
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "d.servedPath": "/home/vushu/.config/coc/extensions/coc-dlang-data/serve-d",
+    "d.dcdServerPath": "/home/vushu/.local/share/code-d/bin/dcd-server",
+    "d.dcdClientPath": "/home/vushu/.local/share/code-d/bin/dcd-client",
+
+}
