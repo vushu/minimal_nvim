@@ -1,8 +1,78 @@
 set nocompatible " Disable compatibility to old-time vi"
+
 filetype off
 filetype plugin indent on
 
 filetype plugin on
+
+""""""SETTINGS""""""""
+
+" Sets how many lines of history VIM has to remember
+set history=700
+
+" Splits
+" Note: Check the leader key shortcuts below for some commands that might
+" conflict with these if you need to change these around...
+set splitright  " Make vertical splits appear to the right
+set splitbelow  " Make horizontal splits appear to the bottom
+
+
+" Search
+set hlsearch    " Highlight searched pattern
+set ignorecase  " Ignore case when pattern searching
+set incsearch   " Refine search as each character is typed
+
+
+" Backspace
+set backspace=2 " Make backspace delete past where insert mode began
+
+" Tab completion
+set wildmode=longest,list,full
+set wildmenu
+
+set colorcolumn=80
+" set an 80 column border for good coding style
+set cc=80
+set completeopt=menu
+
+" Show matching brackets
+set showmatch
+setf html
+""replace tab with spaces
+
+"set expandtab   " Expand tabs into several spaces
+set smarttab    " Tab to implied indentation depth automatically (I think?)
+set nowrap      " Don't wrap text
+set encoding=utf8
+set autoindent
+set smartindent
+"----------------------------------------------------------------
+" 6. Files and backup
+"----------------------------------------------------------------
+" Disable swap files
+set noswapfile
+" No backup (use Git instead)
+set nobackup
+" Prevents automatic write backup
+set nowritebackup
+" Use Unix as the standard file type
+set fileformats=unix,dos,mac
+" Autoread a file when it is changed from the outside
+set autoread
+" Reload a file when it is changed from the outside
+let g:f5msg = 'Buffer reloaded.'
+nnoremap <F5> :e<CR>:echo g:f5msg<CR>
+" Adding Syntax
+syntax on
+" Enable filetype plugins
+filetype plugin indent on
+
+"show lines numbers
+set number
+set relativenumber
+
+
+
 """"""StandardMappings"""""
 "
 " With a map leader it's possible to do extra key combinations
@@ -25,8 +95,17 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'Chiel92/vim-autoformat'
 Plug 'machakann/vim-highlightedyank'
 Plug 'lfilho/cosco.vim'
+Plug 'bfrg/vim-cpp-modern'
+Plug 'tpope/vim-unimpaired'
+Plug 'octol/vim-cpp-enhanced-highlight'
+
 
 ""Folder explorer
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
+Plug 'bfrg/vim-cpp-modern'
+Plug 'pbogut/fzf-mru.vim'
+
 Plug 'tpope/vim-vinegar'
 Plug 'justinmk/vim-dirvish'
 Plug 'kristijanhusak/vim-dirvish-git'
@@ -293,6 +372,7 @@ nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
+
 function! XTermPasteBegin()
     set pastetoggle=<Esc>[201~
     set paste
@@ -300,6 +380,34 @@ function! XTermPasteBegin()
 endfunction]]"]]"
 
 "
+""""""FZF settings"
+function! s:find_git_root()
+    return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+
+command! ProjectFiles execute 'Files' s:find_git_root()
+
+
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+nnoremap <leader>r :FZFMru<cr>
+nnoremap <leader>e :ProjectFiles<cr>
+"nnoremap <silent> <C-f> :ProjectFiles<cr>
+" Advanced customization using autoload functions
+"inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
+
+"""""Evaluate"""""""
+au Filetype * nnoremap <leader>v :vsplit ~/.config/nvim/init.vim<CR>
+
 
 ""THEME
 
