@@ -98,7 +98,7 @@ Plug 'lfilho/cosco.vim'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'tpope/vim-unimpaired'
 Plug 'octol/vim-cpp-enhanced-highlight'
-
+Plug 'Raimondi/delimitMate'
 
 ""Folder explorer
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
