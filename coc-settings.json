@@ -1,23 +1,5 @@
 {
-
     "languageserver": {
-        "haskell": {
-            "command": "hie-wrapper",
-            "rootPatterns": [".stack.yaml", "cabal.config", "package.yaml"],
-            "filetypes": ["hs", "lhs", "haskell"],
-            "initializationOptions": {},
-            "settings": {
-                "languageServerHaskell": {
-                    "hlintOn": false,
-                    "maxNumberOfProblems": 10,
-                    "completionSnippetsOn": true
-                }
-            }
-        },
-        "kotlin": {
-            "command": "/home/vushu/.lsp/KotlinLanguageServer/server/build/install/server/bin/server",
-            "filetypes": ["kotlin", "kt", "kts"]
-        },
         "haxe": {
             "command": "node",
             "args": ["/home/vushu/coding/repos/haxe-language-server/bin/server.js"],
@@ -70,7 +52,7 @@
             }
         }
     },
-    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/13.0.0/clangd_13.0.0/bin/clangd",
+    "clangd.path": "/usr/bin/clangd",
     "d.trace.server": "verbose",
     "d.rootPatterns": [
         "dub.json",

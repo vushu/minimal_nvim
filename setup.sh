@@ -7,16 +7,17 @@ sudo npm install n -g
 sudo n latest
 sudo apt install curl -y
 sudo apt install tmux -y
-sudo apt-get install silversearcher-ag
+sudo apt install silversearcher-ag
 sudo apt install clang-format -y
-sudo apt-get install python3-pip -y
+sudo apt install python3-pip -y
+sudo apt install unzip -y
 pip3 install pynvim
+
 #Install clang-13
-echo "deb http://apt.llvm.org/focal/ llvm-toolchain-focal-13 main" >> /etc/apt/sources.list
-echo "deb-src http://apt.llvm.org/focal/ llvm-toolchain-focal-13 main" >> /etc/apt/sources.list
-sudo apt update
-wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
-sudo apt install clang-13 clangd-13 clang-format-13 -y
+curl https://github.com/clangd/clangd/releases/download/13.0.0/clangd-linux-13.0.0.zip
+unzip clangd-linux-13.0.0.zip
+ln -s clangd_13.0.0/bin/clangd /usr/bin/clangd
+
 
 echo "export TERM=xterm-256color" >> ~/.bashrc
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
