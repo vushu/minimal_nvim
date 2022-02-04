@@ -16,7 +16,7 @@ pip3 install pynvim
 #Install clang-13
 wget https://github.com/clangd/clangd/releases/download/13.0.0/clangd-linux-13.0.0.zip
 unzip clangd-linux-13.0.0.zip
-ln -s clangd_13.0.0/bin/clangd /usr/bin/clangd
+cp clangd_13.0.0/bin/clangd /usr/bin/clangd
 
 
 echo "export TERM=xterm-256color" >> ~/.bashrc
