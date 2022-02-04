@@ -302,6 +302,21 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 ""CUSTOM
 au FileType * nmap <leader>f :Autoformat<CR>
+"exit terminal with <ESC>
+tnoremap <Esc> <C-\><C-n>
+""""""Navigate Buffers""""""
+" To open a new empty buffer
+nmap <leader>T :enew<cr>
+
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <leader>bq :bp <BAR> bd #<CR>
 
 augroup fast_keys
     autocmd!
@@ -391,7 +406,6 @@ endfunction
 
 command! ProjectFiles execute 'Files' s:find_git_root()
 
-
 " Mapping selecting mappings
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
@@ -405,9 +419,6 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 
 nnoremap <leader>r :FZFMru<cr>
 nnoremap <leader>e :ProjectFiles<cr>
-"nnoremap <silent> <C-f> :ProjectFiles<cr>
-" Advanced customization using autoload functions
-"inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
 """""Evaluate"""""""
 au Filetype * nnoremap <leader>v :vsplit ~/.config/nvim/init.vim<CR>
