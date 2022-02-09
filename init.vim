@@ -99,6 +99,7 @@ Plug 'bfrg/vim-cpp-modern'
 Plug 'tpope/vim-unimpaired'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'Raimondi/delimitMate'
+Plug 'scrooloose/nerdcommenter'
 
 "Buffer"
 Plug 'ap/vim-buftabline'
@@ -301,6 +302,8 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 
 ""CUSTOM
+nmap <leader><cr> :nohl<cr>
+
 au FileType * nmap <leader>f :Autoformat<CR>
 "exit terminal with <ESC>
 tnoremap <Esc> <C-\><C-n>
