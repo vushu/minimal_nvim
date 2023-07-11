@@ -14,9 +14,9 @@ sudo apt install unzip -y
 pip3 install pynvim
 
 #Install clang-13
-wget https://github.com/clangd/clangd/releases/download/13.0.0/clangd-linux-13.0.0.zip
-unzip clangd-linux-13.0.0.zip
-mv clangd_13.0.0 /opt/clangd_13.0.0
+#wget https://github.com/clangd/clangd/releases/download/13.0.0/clangd-linux-13.0.0.zip
+#unzip clangd-linux-13.0.0.zip
+#mv clangd_13.0.0 /opt/clangd_13.0.0
 
 echo "export TERM=xterm-256color" >> ~/.bashrc
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
