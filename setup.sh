@@ -39,7 +39,7 @@ cp coc-settings.json ~/.config/nvim/
 
 
 #Adding cwd tools
-mkdir ~/tools && cd ~/tools && git clone https://github.com/vushu/cwd_tools.git
+mkdir -p ~/tools && cd ~/tools && git clone https://github.com/vushu/cwd_tools.git
 
 echo "source ~/tools/cwd_tools/cwd_tools" >> ~/.bashrc
 echo "Adding nvim aliases"
