@@ -29,8 +29,7 @@ chmod u+x nvim.appimage
 
 ./nvim.appimage --appimage-extract
 
-mv squashfs-root /
-ln -s /squashfs-root/AppRun /usr/bin/nvim
+sudo ln -s "$(pwd)/squashfs-root/AppRun" /usr/local/bin/nvim
 
 mkdir -p ~/.config/nvim
 #copy init.vim to
@@ -51,7 +50,7 @@ echo "export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g \"\"'" >> ~/.bash
 
 
 nvim +PlugInstall +qall
-nvim +'CocInstall -sync coc-clangd' +qall
+#nvim +'CocInstall -sync coc-clangd' +qall
 nvim +CocUpdateSync +qall
 
 echo "source ~/.bashrc"
