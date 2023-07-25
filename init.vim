@@ -111,7 +111,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'pbogut/fzf-mru.vim'
 
-Plug 'tpope/vim-vinegar'
 Plug 'justinmk/vim-dirvish'
 Plug 'kristijanhusak/vim-dirvish-git'
 Plug 'christoomey/vim-tmux-navigator'
