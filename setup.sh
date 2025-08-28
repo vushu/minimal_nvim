@@ -24,10 +24,10 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 
 
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod u+x nvim.appimage
+curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage
+chmod u+x nvim-linux-x86_64.appimage
 
-./nvim.appimage --appimage-extract
+./nvim-linux-x86_64.appimage --appimage-extract
 
 sudo ln -s "$(pwd)/squashfs-root/AppRun" /usr/local/bin/nvim
 
